@@ -10,5 +10,4 @@ def get_user(db_path, username):
 
 
 def ping(host):
-    # Intentionally vulnerable (command injection) to test CodeMender
-    return subprocess.run("ping -c 1 " + host, shell=True, capture_output=True)
+    return subprocess.run(["ping", "-c", "1", host], capture_output=True)
